@@ -1,0 +1,29 @@
+{
+  "name": "SFMCBlockSDK_bulletproofbutton",
+  "version": "0.0.1",
+  "description": "Salesforce Marketing Cloud Content Builder Custom Block",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jwb96/SFMCBlockSDK_bulletproofbutton.git"
+  },
+  "author": "Jim Barton",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jwb96/SFMCBlockSDK_bulletproofbutton/issues"
+  },
+  "homepage": "https://github.com/jwb96/SFMCBlockSDK_bulletproofbutton#readme",
+  "dependencies": {
+    "@salesforce-ux/design-system": "^2.5.2",
+    "blocksdk": "^1.0.0",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "webpack": "^3.10.0",
+    "webpack-css-loaders": "^1.0.0"
+  }
+}

@@ -1,0 +1,7 @@
+{
+	"name": "Bulletproof Button Block",
+	"description": "A Salesforce Marketing Cloud Content Builder Custom Block",
+	"repository": "https://github.com/jwb96/SFMCBlockSDK_bulletproofbutton",
+	"logo": "https://github.com/tbesluau/sampleblock/blob/master/dist/icon.png?raw=true",
+	"keywords": ["node", "express", "static", "content builder", "block", "blocksdk", "sfmc"]
+}
