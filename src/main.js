@@ -5,6 +5,25 @@ var sdk = new SDK();
 
 var title, description;
 
+import { LightningElement } from 'lwc';
+
+export default class ComboboxRequired extends LightningElement {
+    value = 'inProgress';
+
+    get options() {
+        return [
+            { label: 'New', value: 'new' },
+            { label: 'In Progress', value: 'inProgress' },
+            { label: 'Finished', value: 'finished' },
+        ];
+    }
+
+    handleChange(event) {
+        this.value = event.detail.value;
+    }
+}
+
+
 function debounce (func, wait, immediate) {
 	var timeout;
 	return function() {
