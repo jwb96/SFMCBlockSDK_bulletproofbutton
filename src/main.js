@@ -27,25 +27,25 @@ function createWallet() {
 	block_color = document.getElementById('block_color').value;
 	alignment = document.getElementById('alignment').value;
 
-	if (button_color == 'GRAPE') {
+	if (button_color == 'grape') {
 		button_hex = '#8250C3'
 		text_color = '#FFFFFF'
 		border_style = '0px'
 		vml_border = '#8250C3'
 	} 
-		else if (button_color == 'MANGO') {
+		else if (button_color == 'mango') {
 			button_hex = '#FFA700'
 			text_color = '#000000'
 			border_style = '0px'
 			vml_border = '#FFA700'
 		}
-  			else if (button_color == 'ARCTIC') {
+  			else if (button_color == 'arctic') {
 				button_hex = '#1AD1DB'
 				text_color = '#000000'
 				border_style = '0px'
 				vml_border = '#1AD1DB'
 			}
-				else if (button_color == 'WHITE') {
+				else if (button_color == 'white') {
 					button_hex = '#FFFFFF'
 					text_color = '#743DBC'
 					border_style = '1px solid #743DBC'
