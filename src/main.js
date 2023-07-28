@@ -77,12 +77,12 @@ function createWallet() {
 							'<table width="100%" cellpadding="0" cellspacing="0" border="0">' + 
 								'<tr>' + 
 									'<td name="body-wallet-heading-text" id="body-wallet-heading-text" class="xspace-orhead_3_2d" align="center" valign="middle" style="padding-top:60px; padding-bottom:32px; font-family:Arial; font-size:18px; color:#333333; letter-spacing:0.3em;">' + 
-										button_text + 
+										button_text + cta_length +
 									'</td>' + 
 								'</tr>' + 
 								'<tr>' + 
 									'<td name="body-wallet-subheading-text" id="body-wallet-subheading-text" class="xspace-headtop_3_2d" style=" padding-top:15px; padding-bottom:30px; font-family:Arial; font-size:14px; color:#8b8b8b;" align="center">' + 
-										button_url + 
+										button_url + cta_length +
 									'</td>' + 
 								'</tr>' + 
 								'<tr>' + 
@@ -116,8 +116,14 @@ function createWallet() {
 sdk.getData(function (data) {
 	button_text = data.button_text || '';
 	button_url = data.button_url || '';
+	button_color = data.button_color || '';
+	block_color = data.block_color || '';
+	alignment = data.alignment || '';
 	document.getElementById('button_text').value = button_text;
 	document.getElementById('button_url').value = button_url;
+	document.getElementById('button_color').value = button_color;
+	document.getElementById('block_color').value = block_color;
+	document.getElementById('alignment').value = alignment;
 	createWallet();
 });
 
