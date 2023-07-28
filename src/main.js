@@ -103,17 +103,17 @@ function createWallet() {
 
 	sdk.setSuperContent (
 		'<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">' +
-			'<tr>' +
-				'<td align="' + alignment +'" class="mobile-padding" style=" padding: 0px 32px 0px 32px;">' +
-				'<table border="0" cellpadding="0" cellspacing="0" role="presentation">' +
-					'<tr>' +
-					'<td bgcolor="' + button_hex + '" style="padding: 0; font-size: 16px; font-weight: bold; font-family: Arial, helvetica, sans-serif; color: ' + text_color + '; text-align: left;border-radius: 30px; -moz-border-radius: 30px; -webkit-border-radius: 30px; text-align: center; background-color: ' + button_hex + ';padding-left: 32px; padding-right: 32px; border: ' + border_style + ';">' +
-						'<a alias="btn_' + button_text + '" conversion="false" data-linkto="other" href="' + button_url + '" style="color:' + text_color + ' !important;text-decoration:none; display: block; background-color: ' + button_hex + ';border: 0px;line-height: 40px;" target="_blank" title="">' + button_text + '</a></td>' +
-					'</tr>' +
-				'</table>' +
-				'</td>' +
-			'</tr>' +
-			'</table>'
+		'<tr>' +
+			'<td align="' + alignment +'" class="mobile-padding" style=" padding: ' + padding_top + 'px 32px ' + padding-bottom + 'px 32px; background-color: ' + block_color + '">' +
+			'<table border="0" cellpadding="0" cellspacing="0" role="presentation">' +
+				'<tr>' +
+				'<td bgcolor="' + button_hex + '" style="padding: 0; font-size: 16px; font-weight: bold; font-family: Arial, helvetica, sans-serif; color: ' + text_color + '; text-align: left;border-radius: 30px; -moz-border-radius: 30px; -webkit-border-radius: 30px; text-align: center; background-color: ' + button_hex + ';padding-left: 32px; padding-right: 32px; border: ' + border_style + ';">' +
+					'<a alias="btn_' + button_text + '" conversion="false" data-linkto="other" href="' + button_url + '" style="color:' + text_color + ' !important;text-decoration:none; display: block; background-color: ' + button_hex + ';border: 0px;line-height: 40px;" target="_blank" title="">' + button_text + '</a></td>' +
+				'</tr>' +
+			'</table>' +
+			'</td>' +
+		'</tr>' +
+		'</table>' 
 			);
 	
 	// setData(dataObject, callback()). Required to retain the metada of the content block. In case of missing fields, there might be a loss of data.
@@ -121,8 +121,8 @@ function createWallet() {
 		button_text: button_text, 
 		button_url: button_url, 
 		button_color: button_color, 
-		block_color: block_color, 
-		alignment: alignment,
+		alignment: alignment, 		
+		block_color: block_color, 		
 		padding_top: padding_top, 
 		padding_bottom: padding_bottom
 	});
