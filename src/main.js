@@ -122,7 +122,6 @@ function createWallet() {
 		button_text: button_text, 
 		button_url: button_url, 
 		button_color: button_color, 
-		 		
 		block_color: block_color, 		
 		padding_top: padding_top, 
 		padding_bottom: padding_bottom
