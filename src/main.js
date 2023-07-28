@@ -3,7 +3,7 @@ require('../node_modules/@salesforce-ux/design-system/assets/styles/salesforce-l
 var SDK = require('blocksdk');
 var sdk = new SDK();
 
-var button_text, button_url, button_color, block_color, alignment, button_hex, text_color, vml_border, border_style, cta_length, vml_width;
+var button_text, button_url, button_color, block_color, alignment, button_hex, text_color, vml_border, border_style, cta_length, vml_width, padding_top, padding_bottom;
 
 function debounce (func, wait, immediate) {
 	var timeout;
@@ -26,6 +26,8 @@ function createWallet() {
 	button_color = document.getElementById('button_color').value;
 	block_color = document.getElementById('block_color').value;
 	alignment = document.getElementById('alignment').value;
+	padding_top = document.getElementById('padding_top').value;
+	padding_bottom = document.getElementById('padding_bottom').value;
 
 	if (button_color == 'grape') {
 		button_hex = '#8250C3'
@@ -70,7 +72,7 @@ function createWallet() {
 	sdk.setContent(
 		'<div>' +
 		'<!--[if mso]>' +
-		'<table align="' + alignment + '" style=" padding: 0px 32px 0px 32px;">' +
+		'<table align="' + alignment + '" style=" padding: ' + padding_top + 'px 32px ' + padding_bottom + 'px 32px;" bgcolor="' + block_color + '">' +
 		'<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="line-height:45px;v-text-anchor:middle;width:' + vml_width + '; height:55px;" arcsize="75%"  fillcolor="' + button_hex + '" strokecolor="' + vml_border + '">' +
 		'<w:anchorlock>' +
 			'<center>' +
@@ -86,7 +88,7 @@ function createWallet() {
 		'<!--[if !mso]-->' +
 		'<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">' +
 		'<tr>' +
-			'<td align="' + alignment +'" class="mobile-padding" style=" padding: 0px 32px 0px 32px;">' +
+			'<td align="' + alignment +'" class="mobile-padding" style=" padding: ' + padding_top + 'px 32px ' + padding-bottom + 'px 32px; background-color: ' + block_color + '">' +
 			'<table border="0" cellpadding="0" cellspacing="0" role="presentation">' +
 				'<tr>' +
 				'<td bgcolor="' + button_hex + '" style="padding: 0; font-size: 16px; font-weight: bold; font-family: Arial, helvetica, sans-serif; color: ' + text_color + '; text-align: left;border-radius: 30px; -moz-border-radius: 30px; -webkit-border-radius: 30px; text-align: center; background-color: ' + button_hex + ';padding-left: 32px; padding-right: 32px; border: ' + border_style + ';">' +
