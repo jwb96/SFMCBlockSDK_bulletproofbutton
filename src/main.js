@@ -118,10 +118,11 @@ function createWallet() {
 	
 	// setData(dataObject, callback()). Required to retain the metada of the content block. In case of missing fields, there might be a loss of data.
 	sdk.setData({
+		alignment: alignment,
 		button_text: button_text, 
 		button_url: button_url, 
 		button_color: button_color, 
-		alignment: alignment, 		
+		 		
 		block_color: block_color, 		
 		padding_top: padding_top, 
 		padding_bottom: padding_bottom
