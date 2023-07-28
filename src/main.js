@@ -104,7 +104,7 @@ function createWallet() {
 	sdk.setSuperContent (
 		'<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">' +
 		'<tr>' +
-			'<td align="' + alignment + '" class="mobile-padding" style=" padding: ' + padding_top + 'px 32px ' + padding-bottom + 'px 32px; background-color: ' + block_color + '">' +
+			'<td align="' + alignment + '" class="mobile-padding" style=" padding: ' + padding_top + 'px 32px ' + padding_bottom + 'px 32px; background-color: ' + block_color + '">' +
 			'<table border="0" cellpadding="0" cellspacing="0" role="presentation">' +
 				'<tr>' +
 				'<td bgcolor="' + button_hex + '" style="padding: 0; font-size: 16px; font-weight: bold; font-family: Arial, helvetica, sans-serif; color: ' + text_color + '; text-align: left;border-radius: 30px; -moz-border-radius: 30px; -webkit-border-radius: 30px; text-align: center; background-color: ' + button_hex + ';padding-left: 32px; padding-right: 32px; border: ' + border_style + ';">' +
