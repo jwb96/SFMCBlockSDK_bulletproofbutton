@@ -58,7 +58,7 @@ function createWallet() {
 						vml_border = '#8250C3'
 					}
 
-	cta_length = ${button_text.length}
+	cta_length = button_text.length
 
 	if (cta_length <= 10) {vml_width = '200px !important'}
   		else
