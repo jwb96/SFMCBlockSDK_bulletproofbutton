@@ -68,55 +68,51 @@ function createWallet() {
 	// ALTERED VERSION OF SETCONTENT & SETDATA
 	// setContent(content, callback()). Only content attribute value is passed. It sets content stored in the widget as the original HTML(+script) of the body content of content block: CnC_Pickup_Wallet_ES_Omni in Test BU
 	sdk.setContent(
-		'<table cellspacing="0" cellpadding="0" width="100%" align="left" border="0" style="background-color:#f2f2f2" bgcolor="#f2f2f2">' + 
-			'<tr align="center">' + 
-				'<td align="center" valign="top">' +         
-					'<table border="0" width="600" cellpadding="0" cellspacing="0" class="templateColumns100">' +
-						'<tr align="center">' + 
-							'<td align="center" valign="top">' + 
-								'<table width="100%" cellpadding="0" cellspacing="0" border="0">' + 
-									'<tr>' + 
-										'<td align="center" valign="middle" style="padding-top:60px; padding-bottom:32px; font-family:Arial; font-size:18px; color:#333333; letter-spacing:0.3em;">Button text: ' + 
-											button_text +
-										'</td>' + 
-									'</tr>' + 
-									'<tr>' + 
-										'<td style="padding-top:15px; padding-bottom:30px; font-family:Arial; font-size:14px; color:#8b8b8b;" align="center">Button URL: ' + 
-											button_url +
-										'</td>' + 
-									'</tr>' + 
-									'<tr>' + 
-										'<td style="padding-top:15px; padding-bottom:30px; font-family:Arial; font-size:14px; color:#8b8b8b;" align="center">CTA length: ' + 
-											cta_length +
-										'</td>' + 
-									'</tr>' + 
-									'<tr>' + 
-										'<td style="padding-top:15px; padding-bottom:30px; font-family:Arial; font-size:14px; color:#8b8b8b;" align="center">VML width: ' + 
-											vml_width +
-										'</td>' + 
-									'</tr>' + 
-									'<tr>' + 
-										'<td style="padding-top:15px; padding-bottom:30px; font-family:Arial; font-size:14px; color:#8b8b8b;" align="center">Button hex: ' + 
-											button_hex +
-										'</td>' + 
-									'</tr>' + 
-									'<tr>' + 
-										'<td style="padding-top:15px; padding-bottom:30px; font-family:Arial; font-size:14px; color:#8b8b8b;" align="center">Text color: ' + 
-											text_color +
-										'</td>' + 
-									'</tr>' + 
-									'<tr>' + 
-										'<td style="padding-top:15px; padding-bottom:30px; font-family:Arial; font-size:14px; color:#8b8b8b;" align="center">VML border: ' + 
-											vml_border +
-										'</td>' + 
-									'</tr>' + 
-								'</table>' +   
-							'</td>' + 
-						'</tr>' +
-					'</table>' +
-				'</td>' + 
+		'<div>' +
+		'<!--[if mso]>' +
+		'<table align="' + alignment + '" style=" padding: 0px 32px 0px 32px;">' +
+		'<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="line-height:45px;v-text-anchor:middle;width:' + vml_width + '; height:55px;" arcsize="75%"  fillcolor="' + button_hex + '" strokecolor="' + vml_border + '">' +
+		'<w:anchorlock>' +
+			'<center>' +
+			'<!--[endif]---->' +
+		'<div style="display:none;visibility:hidden;overflow:hidden;max-height:0px;width:' + vml_width + ';">' +
+			'<a alias="btn_' + button_text + '" href="' + button_url + '" style="color: '+ text_color + ';font-family: arial,sans-serif; font-size:16px; font-weight:bold; text-decoration:none;">' + button_text + '</a></div>' +
+		'<!--[if mso]>' +
+		'</center>' +
+		'</v:roundrect>' +
+		'</table>' +
+		'<![endif]-->' +
+		'</div>' +
+		'<!--[if !mso]-->' +
+		'<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">' +
+		'<tr>' +
+			'<td align="' + alignment +'" class="mobile-padding" style=" padding: 0px 32px 0px 32px;">' +
+			'<table border="0" cellpadding="0" cellspacing="0" role="presentation">' +
+				'<tr>' +
+				'<td bgcolor="' + button_hex + '" style="padding: 0; font-size: 16px; font-weight: bold; font-family: Arial, helvetica, sans-serif; color: ' + text_color + '; text-align: left;border-radius: 30px; -moz-border-radius: 30px; -webkit-border-radius: 30px; text-align: center; background-color: ' + button_hex + ';padding-left: 32px; padding-right: 32px; border: ' + border_style + ';">' +
+					'<a alias="btn_' + button_text + '" conversion="false" data-linkto="other" href="' + button_url + '" style="color:' + text_color + ' !important;text-decoration:none; display: block; background-color: ' + button_hex + ';border: 0px;line-height: 40px;" target="_blank" title="">' + button_text + '</a></td>' +
+				'</tr>' +
+			'</table>' +
+			'</td>' +
+		'</tr>' +
+		'</table>' +
+		'<!--[endif]-->'
+		);
+
+	sdk.setSuperContent (
+		'<table border="0" cellpadding="0" cellspacing="0" role="presentation" width="100%">' +
+			'<tr>' +
+				'<td align="' + alignment +'" class="mobile-padding" style=" padding: 0px 32px 0px 32px;">' +
+				'<table border="0" cellpadding="0" cellspacing="0" role="presentation">' +
+					'<tr>' +
+					'<td bgcolor="' + button_hex + '" style="padding: 0; font-size: 16px; font-weight: bold; font-family: Arial, helvetica, sans-serif; color: ' + text_color + '; text-align: left;border-radius: 30px; -moz-border-radius: 30px; -webkit-border-radius: 30px; text-align: center; background-color: ' + button_hex + ';padding-left: 32px; padding-right: 32px; border: ' + border_style + ';">' +
+						'<a alias="btn_' + button_text + '" conversion="false" data-linkto="other" href="' + button_url + '" style="color:' + text_color + ' !important;text-decoration:none; display: block; background-color: ' + button_hex + ';border: 0px;line-height: 40px;" target="_blank" title="">' + button_text + '</a></td>' +
+					'</tr>' +
+				'</table>' +
+				'</td>' +
 			'</tr>' +
-		'</table>');
+			'</table>'
+			);
 	
 	// setData(dataObject, callback()). Required to retain the metada of the content block. In case of missing fields, there might be a loss of data.
 	sdk.setData({
