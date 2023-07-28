@@ -71,7 +71,7 @@ function createWallet() {
 	'<table cellspacing="0" cellpadding="0" width="100%" align="left" border="0" style="background-color:#f2f2f2" bgcolor="#f2f2f2">' + 
 		'<tr align="center">' + 
 			'<td align="center" valign="top">' +         
-				'<table border="0" width="640" cellpadding="0" cellspacing="0" class="templateColumns100">' +
+				'<table border="0" width="600" cellpadding="0" cellspacing="0" class="templateColumns100">' +
 					'<tr align="center">' + 
 						'<td align="center" valign="top">' + 
 							'<table width="100%" cellpadding="0" cellspacing="0" border="0">' + 
