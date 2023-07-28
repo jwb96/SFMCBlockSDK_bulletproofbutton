@@ -122,7 +122,9 @@ function createWallet() {
 		button_url: button_url, 
 		button_color: button_color, 
 		block_color: block_color, 
-		alignment: alignment
+		alignment: alignment,
+		padding_top: padding_top, 
+		padding_bottom: padding_bottom
 	});
 }
 
@@ -132,11 +134,15 @@ sdk.getData(function (data) {
 	button_color = data.button_color || '';
 	block_color = data.block_color || '';
 	alignment = data.alignment || '';
+	padding_top = data.padding_top || '';
+	padding_bottom = data.padding_bottom || '';
 	document.getElementById('button_text').value = button_text;
 	document.getElementById('button_url').value = button_url;
 	document.getElementById('button_color').value = button_color;
 	document.getElementById('block_color').value = block_color;
 	document.getElementById('alignment').value = alignment;
+	document.getElementById('padding_top').value = padding_top;
+	document.getElementById('padding_bottom').value = padding_bottom;
 	createWallet();
 });
 
