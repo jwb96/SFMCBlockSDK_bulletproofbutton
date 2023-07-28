@@ -116,8 +116,8 @@ function createWallet() {
 sdk.getData(function (data) {
 	button_text = data.button_text || '';
 	button_url = data.button_url || '';
-	document.getElementById('text-input-id-0').value = title;
-	document.getElementById('text-input-id-1').value = description;
+	document.getElementById('button_text').value = button_text;
+	document.getElementById('button_url').value = button_url;
 	createWallet();
 });
 
