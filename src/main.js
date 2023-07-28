@@ -3,8 +3,7 @@ require('../node_modules/@salesforce-ux/design-system/assets/styles/salesforce-l
 var SDK = require('blocksdk');
 var sdk = new SDK();
 
-var title, description;
-
+var button_text, button_url, button_color, block_color, alignment, button_hex, text_color, vml_border, border_style, cta_length, vml_width;
 
 function debounce (func, wait, immediate) {
 	var timeout;
@@ -22,8 +21,49 @@ function debounce (func, wait, immediate) {
 }
 
 function createWallet() {
-	title = document.getElementById('text-input-id-0').value;
-	description = document.getElementById('text-input-id-1').value;
+	button_text = document.getElementById('button_text').value;
+	button_url = document.getElementById('button_url').value;
+	button_color = document.getElementById('button_color').value;
+	block_color = document.getElementById('block_color').value;
+	alignment = document.getElementById('alignment').value;
+
+	if (button_color == 'GRAPE') {
+		button_hex = '#8250C3'
+		text_color = '#FFFFFF'
+		border_style = '0px'
+		vml_border = '#8250C3'
+	} 
+		else if (button_color == 'MANGO') {
+			button_hex = '#FFA700'
+			text_color = '#000000'
+			border_style = '0px'
+			vml_border = '#FFA700'
+		}
+  			else if (button_color == 'ARCTIC') {
+				button_hex = '#1AD1DB'
+				text_color = '#000000'
+				border_style = '0px'
+				vml_border = '#1AD1DB'
+			}
+				else if (button_color == 'WHITE') {
+					button_hex = '#FFFFFF'
+					text_color = '#743DBC'
+					border_style = '1px solid #743DBC'
+					vml_border = '#743DBC'
+				} 
+					else {
+						button_hex = '#8250C3'
+						text_color = '#FFFFFF'
+						border_style = '0px'
+						vml_border = '#8250C3'
+					}
+
+	cta_length = ${button_text.length}
+
+	if cta_length <= 10 {vml_width = '200px !important'}
+  		else
+    		{vml_width = ((cta_length *10) + 50) + 'px !important'}
+
 
 	// ALTERED VERSION OF SETCONTENT & SETDATA
 	// setContent(content, callback()). Only content attribute value is passed. It sets content stored in the widget as the original HTML(+script) of the body content of content block: CnC_Pickup_Wallet_ES_Omni in Test BU
@@ -37,12 +77,12 @@ function createWallet() {
 							'<table width="100%" cellpadding="0" cellspacing="0" border="0">' + 
 								'<tr>' + 
 									'<td name="body-wallet-heading-text" id="body-wallet-heading-text" class="xspace-orhead_3_2d" align="center" valign="middle" style="padding-top:60px; padding-bottom:32px; font-family:Arial; font-size:18px; color:#333333; letter-spacing:0.3em;">' + 
-										title + 
+										button_text + 
 									'</td>' + 
 								'</tr>' + 
 								'<tr>' + 
 									'<td name="body-wallet-subheading-text" id="body-wallet-subheading-text" class="xspace-headtop_3_2d" style=" padding-top:15px; padding-bottom:30px; font-family:Arial; font-size:14px; color:#8b8b8b;" align="center">' + 
-										description + 
+										button_url + 
 									'</td>' + 
 								'</tr>' + 
 								'<tr>' + 
@@ -65,14 +105,17 @@ function createWallet() {
 	
 	// setData(dataObject, callback()). Required to retain the metada of the content block. In case of missing fields, there might be a loss of data.
 	sdk.setData({
-		title: title,
-		description: description
+		button_text: button_text, 
+		button_url: button_url, 
+		button_color: button_color, 
+		block_color: block_color, 
+		alignment: alignment
 	});
 }
 
 sdk.getData(function (data) {
-	title = data.title || '';
-	description = data.description || '';
+	button_text = data.button_text || '';
+	button_url = data.button_url || '';
 	document.getElementById('text-input-id-0').value = title;
 	document.getElementById('text-input-id-1').value = description;
 	createWallet();
