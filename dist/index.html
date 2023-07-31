@@ -32,8 +32,8 @@
 				padding_bottom: "Must be a whole number between 0 and 64",
 			  },
 			  onfocusout: function(element) {
-				  $(element).valid();
-			  },
+				this.element(element);
+			  }
 			});
 		});
 	</script>
