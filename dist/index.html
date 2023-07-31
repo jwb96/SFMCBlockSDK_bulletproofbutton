@@ -5,6 +5,36 @@
 	<title>Bulletproof Button Custom Block</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+	<script type="text/javascript">
+		(function() {
+			$("#myForm").validate({
+			  rules: {
+				button_text: {
+				  required: true,
+				},
+				button_url: {
+				  required: true,
+				  url: true,
+				},
+				padding_top: {
+					digits: true,
+					range: [0, 64]
+				}
+				padding_bottom: {
+					digits: true,
+					range: [0, 64]
+				}
+			  },
+			  messages: {
+				button_text: "Please enter text for the button!",
+				button_url: "Please enter valid URL, with HTTPS://!",
+				padding_top: "Must be a whole number between 0 and 64",
+				padding_bottom: "Must be a whole number between 0 and 64",
+			  },
+			  onfocusout: function(element) { $(element).valid(); }
+			});
+		});
+	</script>
 	
 </head>
 
@@ -93,36 +123,7 @@
 	</article>
 
 	<script src="./main.js"></script>
-	<script type="text/javascript">
-		(function() {
-			$("#myForm").validate({
-			  rules: {
-				button_text: {
-				  required: true,
-				},
-				button_url: {
-				  required: true,
-				  url: true,
-				},
-				padding_top: {
-					digits: true,
-					range: [0, 64]
-				}
-				padding_bottom: {
-					digits: true,
-					range: [0, 64]
-				}
-			  },
-			  messages: {
-				button_text: "Please enter text for the button!",
-				button_url: "Please enter valid URL, with HTTPS://!",
-				padding_top: "Must be a whole number between 0 and 64",
-				padding_bottom: "Must be a whole number between 0 and 64",
-			  },
-			  onfocusout: function(element) { $(element).valid(); }
-			});
-		});
-	</script>
+	
 </body>
 
 </html>
