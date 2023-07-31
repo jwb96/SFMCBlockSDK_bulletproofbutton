@@ -3,9 +3,14 @@
 
 <head>
 	<title>Bulletproof Button Custom Block</title>
-	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
-	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
-	
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.14.0/dist/jquery.validate.min.js"></script>
+	<style>
+		.error{
+			color:red;
+			font-size: 12px;
+		  }
+	</style>
 	
 </head>
 
@@ -28,14 +33,14 @@
 					<div class="slds-form-element">
 						<label class="slds-form-element__label" for="button_text">Button Text</label>
 						<div class="slds-form-element__control">
-							<input type="text" id="button_text" class="slds-input"
+							<input type="text" id="button_text" name="button_text" class="slds-input"
 								placeholder="Your CTA Copy" />
 						</div>
 					</div>
 					<div class="slds-form-element">
 						<label class="slds-form-element__label" for="button_url">URL</label>
 						<div class="slds-form-element__control">
-							<input type="text" id="button_url" class="slds-input"
+							<input type="text" id="button_url" name="button_url" class="slds-input"
 							placeholder="Enter valid URL here..." />
 						</div>
 					</div>
@@ -77,14 +82,14 @@
 					<div class="slds-form-element">
 						<label class="slds-form-element__label" for="padding_top">Top padding in px</label>
 						<div class="slds-form-element__control">
-							<input type="text" id="padding_top" class="slds-input" 
+							<input type="text" id="padding_top" name="padding_top" class="slds-input" 
 							placeholder="Enter number only"/>
 						</div>
 					</div>
 					<div class="slds-form-element">
 						<label class="slds-form-element__label" for="padding_bottom">Bottom padding in px</label>
 						<div class="slds-form-element__control">
-							<input type="text" id="padding_bottom" class="slds-input" 
+							<input type="text" id="padding_bottom" name="padding_bottom" class="slds-input" 
 							placeholder="Enter number only"/>
 						</div>
 					</div>
@@ -95,34 +100,48 @@
 
 	<script src="./main.js"></script>
 	<script type="text/javascript">
-		$(document).ready(function () {
+		$(document).ready(function($) {
 			$("#myForm").validate({
+			  debug: true,
 			  rules: {
-				button_text: {
-				  required: true,
-				},
+				button_text: "required",
 				button_url: {
 				  required: true,
-				  url: true,
+				  url: true
 				},
 				padding_top: {
-					digits: true,
-					range: [0, 64]
-				}
+				  digits: true,
+				  range: [0, 64]
+				},
 				padding_bottom: {
-					digits: true,
-					range: [0, 64]
+				  digits: true,
+				  range: [0, 64]
 				}
 			  },
 			  messages: {
 				button_text: "Please enter text for the button!",
-				button_url: "Please enter valid URL, with HTTPS://!",
-				padding_top: "Must be a whole number between 0 and 64",
-				padding_bottom: "Must be a whole number between 0 and 64",
+				button_url: {
+				  required: "URL is required",
+				  url: "Must be valid, complete URL"
+				},
+				padding_top: {
+				  digits: "Must be a whole number between 0 and 64",
+				  range: "Must be a whole number between 0 and 64"
+				},
+				padding_bottom: {
+				  digits: "Must be a whole number between 0 and 64",
+				  range: "Must be a whole number between 0 and 64"
+				}
 			  },
-			  onfocusout: function(element) { $(element).valid(); }
+			  //   onfocusout: function (element) {
+			  //     $(element).valid();
+			  //   },
+			  submitHandler: function (form) {
+				form.submit();
+			  }
 			});
-		});
+		  });
+		  
 	</script>
 	
 </body>
