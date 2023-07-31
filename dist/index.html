@@ -3,6 +3,40 @@
 
 <head>
 	<title>Bulletproof Button Custom Block</title>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.19.5/dist/jquery.validate.min.js"></script>
+	<script type="text/javascript">
+		(function() {
+			$("#myForm").validate({
+			  rules: {
+				button_text: {
+				  required: true,
+				},
+				button_url: {
+				  required: true,
+				  url: true,
+				},
+				padding_top: {
+					digits: true,
+					range: [0, 64]
+				}
+				padding_bottom: {
+					digits: true,
+					range: [0, 64]
+				}
+			  },
+			  messages: {
+				button_text: "Please enter text for the button!",
+				button_url: "Please enter valid URL, with HTTPS://!",
+				padding_top: "Must be a whole number between 0 and 64",
+				padding_bottom: "Must be a whole number between 0 and 64",
+			  },
+			  onfocusout: function(element) {
+				  $(element).valid();
+			  },
+			});
+		});
+	</script>
 </head>
 
 <body>
@@ -18,74 +52,75 @@
 				</div>
 			</header>
 		</div>
-		<div class="slds-card__body slds-card__body_inner">
-			<div id="workspace">
-				<div class="slds-form-element">
-					<label class="slds-form-element__label" for="button_text">Button Text</label>
-					<div class="slds-form-element__control">
-						<input type="text" id="button_text" class="slds-input"
-							placeholder="Your CTA Copy" />
+		<form id="myForm">
+			<div class="slds-card__body slds-card__body_inner">
+				<div id="workspace">
+					<div class="slds-form-element">
+						<label class="slds-form-element__label" for="button_text">Button Text</label>
+						<div class="slds-form-element__control">
+							<input type="text" id="button_text" class="slds-input"
+								placeholder="Your CTA Copy" />
+						</div>
 					</div>
-				</div>
-				<div class="slds-form-element">
-					<label class="slds-form-element__label" for="button_url">URL</label>
-					<div class="slds-form-element__control">
-						<input type="url" id="button_url" class="slds-input"
-						placeholder="Enter valid URL here..." />
+					<div class="slds-form-element">
+						<label class="slds-form-element__label" for="button_url">URL</label>
+						<div class="slds-form-element__control">
+							<input type="text" id="button_url" class="slds-input"
+							placeholder="Enter valid URL here..." />
+						</div>
 					</div>
-				</div>
-				<div class="slds-form-element">
-					<label class="slds-form-element__label" for="button_color">Button Color</label>
-					<div class="slds-form-element__control">
-						<select id="button_color" name="button_color" class="slds-input">
-							<option value="mango" selected>Mango</option>
-							<option value="grape">Grape</option>
-							<option value="white">White</option>
-							<option value="arctic">Arctic Blue</option>
-						</select>
+					<div class="slds-form-element">
+						<label class="slds-form-element__label" for="button_color">Button Color</label>
+						<div class="slds-form-element__control">
+							<select id="button_color" name="button_color" class="slds-input">
+								<option value="mango" selected>Mango</option>
+								<option value="grape">Grape</option>
+								<option value="white">White</option>
+								<option value="arctic">Arctic Blue</option>
+							</select>
+						</div>
 					</div>
-				</div>
-				<div class="slds-form-element">
-					<label class="slds-form-element__label" for="alignment">Button Alignment</label>
-					<div class="slds-form-element__control">
-						<select id="alignment" name="alignment" class="slds-input">
-							<option value="left" selected>Left</option>
-							<option value="center">Center</option>
-							<option value="right">Right</option>
-						</select>
+					<div class="slds-form-element">
+						<label class="slds-form-element__label" for="alignment">Button Alignment</label>
+						<div class="slds-form-element__control">
+							<select id="alignment" name="alignment" class="slds-input">
+								<option value="left" selected>Left</option>
+								<option value="center">Center</option>
+								<option value="right">Right</option>
+							</select>
+						</div>
 					</div>
-				</div>
-				<div class="slds-form-element">
-					<label class="slds-form-element__label" for="block_color">Block Background Color</label>
-					<div class="slds-form-element__control">
-						<select id="block_color" name="block_color" class="slds-input">
-							<option value="#ffffff" selected>White</option>
-							<option value="#743DBC">Grape</option>
-							<option value="#FFA700">Mango</option>
-							<option value="#1AD1DB">Arctic Blue</option>
-							<option value="#00A2AC">Dark Arctic Blue</option>
-							<option value="#8D61C8">80% Grape</option>
-							<option value="#F1EFE9">Omni Beige</option>
-						</select>
+					<div class="slds-form-element">
+						<label class="slds-form-element__label" for="block_color">Block Background Color</label>
+						<div class="slds-form-element__control">
+							<select id="block_color" name="block_color" class="slds-input">
+								<option value="#ffffff" selected>White</option>
+								<option value="#743DBC">Grape</option>
+								<option value="#FFA700">Mango</option>
+								<option value="#1AD1DB">Arctic Blue</option>
+								<option value="#00A2AC">Dark Arctic Blue</option>
+								<option value="#8D61C8">80% Grape</option>
+								<option value="#F1EFE9">Omni Beige</option>
+							</select>
+						</div>
 					</div>
-				</div>
-				<div class="slds-form-element">
-					<label class="slds-form-element__label" for="padding_top">Top padding in px</label>
-					<div class="slds-form-element__control">
-						<input type="text" id="padding_top" class="slds-input" 
-						placeholder="Enter number only"/>
+					<div class="slds-form-element">
+						<label class="slds-form-element__label" for="padding_top">Top padding in px</label>
+						<div class="slds-form-element__control">
+							<input type="text" id="padding_top" class="slds-input" 
+							placeholder="Enter number only"/>
+						</div>
 					</div>
-				</div>
-				<div class="slds-form-element">
-					<label class="slds-form-element__label" for="padding_bottom">Bottom padding in px</label>
-					<div class="slds-form-element__control">
-						<input type="text" id="padding_bottom" class="slds-input" 
-						placeholder="Enter number only"/>
+					<div class="slds-form-element">
+						<label class="slds-form-element__label" for="padding_bottom">Bottom padding in px</label>
+						<div class="slds-form-element__control">
+							<input type="text" id="padding_bottom" class="slds-input" 
+							placeholder="Enter number only"/>
+						</div>
 					</div>
 				</div>
 			</div>
-		</div>
-		
+		</form>
 	</article>
 
 	<script src="./main.js"></script>
