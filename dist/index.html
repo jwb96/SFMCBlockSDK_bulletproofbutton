@@ -119,9 +119,7 @@
 				padding_top: "Must be a whole number between 0 and 64",
 				padding_bottom: "Must be a whole number between 0 and 64",
 			  },
-			  onfocusout: function(element) {
-				this.element(element);
-			  }
+			  onfocusout: function(element) { $(element).valid(); }
 			});
 		});
 	</script>
