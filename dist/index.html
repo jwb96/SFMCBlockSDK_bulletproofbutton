@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Bulletproof Button Custom Block</title>
+	<title>Email Settings Custom Block</title>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
 	<script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.14.0/dist/jquery.validate.min.js"></script>
 	<style>
@@ -22,7 +22,7 @@
 				</div>
 				<div class="slds-media__body">
 					<h2>
-						<span class="slds-text-heading_small">Bulletproof Button Generator</span>
+						<span class="slds-text-heading_small">Email Settings Generator</span>
 					</h2>
 				</div>
 			</header>
@@ -31,66 +31,106 @@
 			<div class="slds-card__body slds-card__body_inner">
 				<div id="workspace">
 					<div class="slds-form-element">
-						<label class="slds-form-element__label" for="button_text">Button Text</label>
+						<label class="slds-form-element__label" for="subjectLine">Subject Line</label>
 						<div class="slds-form-element__control">
-							<input type="text" id="button_text" name="button_text" class="slds-input"
-								placeholder="Your CTA Copy" />
+							<input type="text" id="subjectLine" name="subjectLine" class="slds-input"
+								placeholder="Your subject line" />
 						</div>
 					</div>
 					<div class="slds-form-element">
-						<label class="slds-form-element__label" for="button_url">URL</label>
+						<label class="slds-form-element__label" for="salutation">Salutation</label>
 						<div class="slds-form-element__control">
-							<input type="text" id="button_url" name="button_url" class="slds-input"
-							placeholder="Enter valid URL here..." />
+							<input type="text" id="salutation" name="salutation" class="slds-input" value="Hi"
+							placeholder="Hi" />
 						</div>
 					</div>
 					<div class="slds-form-element">
-						<label class="slds-form-element__label" for="button_color">Button Color</label>
+						<label class="slds-form-element__label" for="version">Version indicator</label>
 						<div class="slds-form-element__control">
-							<select id="button_color" name="button_color" class="slds-input">
-								<option value="mango" selected>Mango</option>
-								<option value="grape">Grape</option>
-								<option value="white">White</option>
-								<option value="arctic">Arctic Blue</option>
-							</select>
+							<input type="text" id="version" name="version" class="slds-input" 
+							placeholder="Enter version indicator or n/a" />
 						</div>
 					</div>
 					<div class="slds-form-element">
-						<label class="slds-form-element__label" for="alignment">Button Alignment</label>
+						<label class="slds-form-element__label" for="veeva">Veeva/INS number</label>
 						<div class="slds-form-element__control">
-							<select id="alignment" name="alignment" class="slds-input">
-								<option value="left" selected>Left</option>
-								<option value="center">Center</option>
-								<option value="right">Right</option>
-							</select>
+							<input type="text" id="veeva" name="veeva" class="slds-input" 
+							placeholder="Enter Veeva/INS number" />
 						</div>
 					</div>
 					<div class="slds-form-element">
-						<label class="slds-form-element__label" for="block_color">Block Background Color</label>
+						<label class="slds-form-element__label" for="customCopyright">Copyright</label>
 						<div class="slds-form-element__control">
-							<select id="block_color" name="block_color" class="slds-input">
-								<option value="#ffffff" selected>White</option>
-								<option value="#743DBC">Grape</option>
-								<option value="#FFA700">Mango</option>
-								<option value="#1AD1DB">Arctic Blue</option>
-								<option value="#00A2AC">Dark Arctic Blue</option>
-								<option value="#8D61C8">80% Grape</option>
-								<option value="#F1EFE9">Omni Beige</option>
-							</select>
+							<input type="text" id="customCopyright" name="customCopyright" class="slds-input" 
+							placeholder="Enter full copyright copy" />
 						</div>
 					</div>
 					<div class="slds-form-element">
-						<label class="slds-form-element__label" for="padding_top">Top padding in px</label>
+						<label class="slds-form-element__label" for="Unsubscribe">Show unsubscribe link</label>
 						<div class="slds-form-element__control">
-							<input type="text" id="padding_top" name="padding_top" class="slds-input" 
-							placeholder="Enter number only"/>
+							<input type="radio" id="unsuby" name="Unsubscribe" value="Yes" checked />
+							<label for="unsuby">Yes</label>
+
+							<input type="radio" id="unsubn" name="Unsubscribe" value="No"  />
+							<label for="unsubn">No</label>
 						</div>
 					</div>
 					<div class="slds-form-element">
-						<label class="slds-form-element__label" for="padding_bottom">Bottom padding in px</label>
+						<label class="slds-form-element__label" for="isi">Show ISI link</label>
 						<div class="slds-form-element__control">
-							<input type="text" id="padding_bottom" name="padding_bottom" class="slds-input" 
-							placeholder="Enter number only"/>
+							<input type="radio" id="isiy" name="isi" value="Yes" checked />
+							<label for="isiy">Yes</label>
+
+							<input type="radio" id="isin" name="isi" value="No"  />
+							<label for="isin">No</label>
+						</div>
+					</div>
+					<div class="slds-form-element">
+						<label class="slds-form-element__label" for="vib">Show view-in-browser link</label>
+						<div class="slds-form-element__control">
+							<input type="radio" id="viby" name="vib" value="Yes" checked />
+							<label for="viby">Yes</label>
+
+							<input type="radio" id="vibn" name="vib" value="No"  />
+							<label for="vibn">No</label>
+						</div>
+					</div>
+					<div class="slds-form-element">
+						<label class="slds-form-element__label" for="vib">Footer FAQ link</label>
+						<div class="slds-form-element__control">
+							<input type="radio" id="OP5FAQy" name="OP5FAQ" value="OP5" checked />
+							<label for="OP5FAQy">OP5</label>
+
+							<input type="radio" id="OP5FAQn" name="OP5FAQ" value="Generic"  />
+							<label for="OP5FAQn">Generic</label>
+						</div>
+					</div>
+					<div class="slds-form-element">
+						<label class="slds-form-element__label" for="ctoken">UTM ctoken</label>
+						<div class="slds-form-element__control">
+							<input type="text" id="ctoken" name="ctoken" class="slds-input" 
+							placeholder="Enter ctoken value" />
+						</div>
+					</div>
+					<div class="slds-form-element">
+						<label class="slds-form-element__label" for="utm_campaign">UTM Campaign</label>
+						<div class="slds-form-element__control">
+							<input type="text" id="utm_campaign" name="utm_campaign" class="slds-input" 
+							placeholder="Enter utm_campaign value" />
+						</div>
+					</div>
+					<div class="slds-form-element">
+						<label class="slds-form-element__label" for="utm_source">UTM Source</label>
+						<div class="slds-form-element__control">
+							<input type="text" id="utm_source" name="utm_source" class="slds-input" 
+							placeholder="Enter utm_source value" />
+						</div>
+					</div>
+					<div class="slds-form-element">
+						<label class="slds-form-element__label" for="utm_content">UTM Content</label>
+						<div class="slds-form-element__control">
+							<input type="text" id="utm_content" name="utm_content" class="slds-input" 
+							placeholder="Enter utm_content value" />
 						</div>
 					</div>
 				</div>
@@ -104,34 +144,14 @@
 			$("#myForm").validate({
 			  debug: true,
 			  rules: {
-				button_text: "required",
-				button_url: {
-				  required: true,
-				  url: true
-				},
-				padding_top: {
-				  digits: true,
-				  range: [0, 64]
-				},
-				padding_bottom: {
-				  digits: true,
-				  range: [0, 64]
-				}
+				subjectline: "required",
+				veeva: "required",
+				customCopyright: "required"
 			  },
 			  messages: {
-				button_text: "Please enter text for the button!",
-				button_url: {
-				  required: "URL is required",
-				  url: "Must be valid, complete URL"
-				},
-				padding_top: {
-				  digits: "Must be a whole number between 0 and 64",
-				  range: "Must be a whole number between 0 and 64"
-				},
-				padding_bottom: {
-				  digits: "Must be a whole number between 0 and 64",
-				  range: "Must be a whole number between 0 and 64"
-				}
+				subjectline: "Subject line is required!",
+				veeva: "Veeva/INS is required!",
+				customCopyright: "Copyright text is required!"
 			  },
 			  //   onfocusout: function (element) {
 			  //     $(element).valid();

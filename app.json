@@ -1,7 +1,7 @@
 {
-	"name": "Bulletproof Button Block",
+	"name": "Email Settings blocksdk",
 	"description": "A Salesforce Marketing Cloud Content Builder Custom Block",
-	"repository": "https://github.com/jwb96/SFMCBlockSDK_bulletproofbutton",
+	"repository": "https://github.com/jwb96/SFMCblockSDK_emailsettings.git",
 	"logo": "https://github.com/tbesluau/sampleblock/blob/master/dist/icon.png?raw=true",
 	"keywords": ["node", "express", "static", "content builder", "block", "blocksdk", "sfmc"]
 }

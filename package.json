@@ -1,5 +1,5 @@
 {
-  "name": "SFMCBlockSDK_bulletproofbutton",
+  "name": "SFMCBlockSDK_emailsettings",
   "version": "0.0.1",
   "description": "Salesforce Marketing Cloud Content Builder Custom Block",
   "main": "index.js",
@@ -9,20 +9,22 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/jwb96/SFMCBlockSDK_bulletproofbutton.git"
+    "url": "https://github.com/jwb96/SFMCblockSDK_emailsettings.git"
   },
   "author": "Jim Barton",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/jwb96/SFMCBlockSDK_bulletproofbutton/issues"
+    "url": "https://github.com/jwb96/SFMCBlockSDK_emailsettings/issues"
   },
-  "homepage": "https://github.com/jwb96/SFMCBlockSDK_bulletproofbutton#readme",
+  "homepage": "https://github.com/jwb96/SFMCBlockSDK_emailsettings#readme",
   "dependencies": {
     "@salesforce-ux/design-system": "^2.5.2",
     "blocksdk": "^1.0.0",
     "express": "^4.16.4"
   },
   "devDependencies": {
+    "eslint": "^8.53.0",
+    "eslint-config-ssjs": "^1.1.11",
     "webpack": "^3.10.0",
     "webpack-css-loaders": "^1.0.0"
   }
