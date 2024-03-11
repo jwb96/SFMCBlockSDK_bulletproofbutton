@@ -141,7 +141,7 @@ function createWallet() {
 	sdk.setContent(
 		'<div>' +
 		'<!--[if mso]>' +
-		'<table width="100%" align="' + alignment + '" style=" padding: ' + padding_top + 'px 32px ' + padding_bottom + 'px 32px;" bgcolor="' + block_color + '">' +
+		'<table align="' + alignment + '" style=" padding: ' + padding_top + 'px 32px ' + padding_bottom + 'px 32px;" bgcolor="' + block_color + '">' +
 		'<v:roundrect xmlns:v="urn:schemas-microsoft-com:vml" xmlns:w="urn:schemas-microsoft-com:office:word" style="line-height:45px;v-text-anchor:middle;width:' + vml_width + '; height:55px;" arcsize="75%"  fillcolor="' + button_hex + '" strokecolor="' + vml_border + '">' +
 		'<w:anchorlock>' +
 			'<center>' +
